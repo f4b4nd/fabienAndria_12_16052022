@@ -1,12 +1,20 @@
 import React from 'react'
 import './App.css'
+import { BrowserRouter as Router, Routes,  Route} from 'react-router-dom'
+import HeroContainer from './containers/hero'
 
 export default function App () {
     return (
-        <div className="App">
-            <header className="App-header">
-                  APP
-            </header>
-        </div>
+        <Router>
+
+            <Routes>
+                <Route path="user/:id" element={
+                    <>
+                        <HeroContainer />
+                    </>
+                }/>
+            </Routes>
+
+        </Router>
     )
 }
