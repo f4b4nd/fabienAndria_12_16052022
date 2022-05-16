@@ -1,42 +1,45 @@
 import { useEffect, useState } from "react"
-import { usersDatas } from '../__mocks__/data'
 
-interface UserData {
-    data: {
-        id: number; 
-        userInfos: { 
-            firstName: string; 
-            lastName: string; 
-            age: number; 
-        }
-        todayScore?: number ; 
-        keyData: { 
-            calorieCount: number; 
-            proteinCount: number; 
-            carbohydrateCount: number; 
-            lipidCount: number; 
-        }; 
-        score?: number; 
+import { defaultDatas } from '../__mocks__/userData'
+import { Route, getUserIDFromEndpoint } from '../helpers/endpoints'
+
+interface DefaultData {    
+    id: number; 
+    userInfos: { 
+        firstName: string; 
+        lastName: string; 
+        age: number; 
     }
+    todayScore?: number; 
+    keyData: { 
+        calorieCount: number; 
+        proteinCount: number; 
+        carbohydrateCount: number; 
+        lipidCount: number; 
+    };
+    score?: number; 
 }
 
-export default function useMockContent ({route, id} : {route: string, id: string}) {
+export default function useMockContent ({route, endpoint} : {route: Route, endpoint: string}) {
 
-    const [ data, setData ] = useState<UserData>({} as UserData)
+    const [ data, setData ] = useState<DefaultData>({} as DefaultData)
 
     useEffect(() => {
 
-        if (route === 'users') {
+        const userID = getUserIDFromEndpoint(endpoint)
 
-            const userData = usersDatas.find(userData => userData.data.id === parseInt(id)) || false
+        if (route === 'default') {
 
-            if (userData) {
-                setData(userData)
+            const mainData = defaultDatas.find(data => data.id === parseInt(userID))
+
+            if (mainData) {
+                setData(mainData)
             }
         }
 
-    }, [setData, route, id])
+    }, [setData, route, endpoint])
 
-    return data
+    return {data}
 
 }
+

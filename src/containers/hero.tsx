@@ -1,14 +1,18 @@
 import { useParams } from "react-router-dom"
 import useMockContent from "../hooks/useMockContent"
 
+import { getEndpoint } from "../helpers/endpoints"
+
 export default function HeroContainer () {
 
     const { id } = useParams()
-    const userData = useMockContent({route: 'users', id: id || ""})
+    const userID = id || ""
+
+    const userData = useMockContent(getEndpoint({route: 'default', userID}))
 
     return (
         <main>
-            Age: {userData.data?.userInfos.age} 
+            Age: {userData.data?.userInfos?.age}
         </main>
     )
 }
