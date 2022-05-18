@@ -1,5 +1,3 @@
-import { ReactElement } from "react"
-
 import InfoCard from "../components/infocard"
 import { COLORS } from "../constants"
 import CaloriesIcon from "../assets/logos/calories-icon.png"
@@ -9,10 +7,10 @@ import ProteinIcon from "../assets/logos/protein-icon.png"
 
 
 interface Data {
-    calorieCount: ReactElement,
-    proteinCount: ReactElement,
-    carbohydrateCount: ReactElement,
-    lipidCount: ReactElement,
+    calorieCount: number,
+    proteinCount: number,
+    carbohydrateCount: number,
+    lipidCount: number,
 }
 
 export default function InfoCardContainer ({ data } : {data: Data}) {
@@ -26,7 +24,7 @@ export default function InfoCardContainer ({ data } : {data: Data}) {
                 <InfoCard.IconContainer backgroundColor={COLORS.lightRed} src={CaloriesIcon} alt="calories" />
 
                 <InfoCard.TextContainer>
-                    <InfoCard.Text fontWeight="bold">{data.calorieCount}g</InfoCard.Text>
+                    <InfoCard.Text fontWeight="bold">{data?.calorieCount}g</InfoCard.Text>
                     <InfoCard.Text> Calories </InfoCard.Text>
                 </InfoCard.TextContainer>
 
@@ -37,7 +35,7 @@ export default function InfoCardContainer ({ data } : {data: Data}) {
                 <InfoCard.IconContainer backgroundColor={COLORS.lightYellow} src={CarbsIcon} alt="Glucides" />
 
                 <InfoCard.TextContainer>
-                    <InfoCard.Text fontWeight="bold">{data.carbohydrateCount}g</InfoCard.Text>
+                    <InfoCard.Text fontWeight="bold">{data?.carbohydrateCount}g</InfoCard.Text>
                     <InfoCard.Text> Glucides </InfoCard.Text>
                 </InfoCard.TextContainer>
 
@@ -49,7 +47,7 @@ export default function InfoCardContainer ({ data } : {data: Data}) {
 
                 <InfoCard.TextContainer>
 
-                    <InfoCard.Text fontWeight="bold">{data.proteinCount}g</InfoCard.Text>
+                    <InfoCard.Text fontWeight="bold">{data?.proteinCount}g</InfoCard.Text>
                     <InfoCard.Text> Lipides </InfoCard.Text>
 
                 </InfoCard.TextContainer>
@@ -61,7 +59,7 @@ export default function InfoCardContainer ({ data } : {data: Data}) {
                 <InfoCard.IconContainer backgroundColor={COLORS.lightViolet} src={LipidsIcon} alt="Lipides" />
 
                 <InfoCard.TextContainer>
-                    <InfoCard.Text fontWeight="bold">{data.lipidCount}g</InfoCard.Text>
+                    <InfoCard.Text fontWeight="bold">{data?.lipidCount}g</InfoCard.Text>
                     <InfoCard.Text> Lipides </InfoCard.Text>
                 </InfoCard.TextContainer>
 
