@@ -1,7 +1,9 @@
+import { ReactNode } from "react" 
+
 import { Container, IconContainer, Icon, GroupIcons, Link, Text } from "./style"
 
 
-export default function SideNavbar ({children} : {children: JSX.Element[]}) {
+export default function SideNavbar ({children} : {children: ReactNode}) {
 
     return <Container> {children} </Container>
 }
@@ -16,7 +18,7 @@ SideNavbar.IconContainer = function ({to, src, alt} : {to: string, src: string, 
     )
 }
 
-SideNavbar.GroupIcons = function ({children} : {children: JSX.Element[]}) {
+SideNavbar.GroupIcons = function ({children} : {children: ReactNode}) {
     return <GroupIcons> {children} </GroupIcons> 
 }
 

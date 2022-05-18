@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 import { Container, Group, Icon, IconContainer, TextContainer, Text } from "./style"
 
 interface RestProps {
@@ -5,7 +7,7 @@ interface RestProps {
 }
 
 interface ContainerProps extends RestProps {
-    children : JSX.Element[],
+    children : ReactNode,
 }
 
 interface IconContainerProps extends RestProps {
@@ -14,14 +16,14 @@ interface IconContainerProps extends RestProps {
 }
 
 interface TextProps extends RestProps {
-    children: string | JSX.Element[],
+    children: ReactNode,
 }
 
 export default function InfoCard ({children, ...restProps} : ContainerProps) {
     return <Container {...restProps}> {children} </Container>
 }
 
-InfoCard.Group = function ({children} : {children: JSX.Element | JSX.Element[]}) {
+InfoCard.Group = function ({children} : {children: ReactNode}) {
     return <Group> {children} </Group>
 }
 

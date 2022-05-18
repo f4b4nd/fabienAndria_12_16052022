@@ -1,9 +1,11 @@
+import { ReactNode } from 'react'
+
 import SportSeeLogo from '../../assets/logos/sportsee.png'
 
 import { Container, Logo, LogoImage, Link } from "./style"
 
 
-export default function Navbar ({children} : {children: JSX.Element[]}) {
+export default function Navbar ({children} : {children: ReactNode}) {
 
     return <Container> {children} </Container>
 }
@@ -16,6 +18,6 @@ Navbar.Logo = function ({to}: {to : string}) {
     )
 }
 
-Navbar.Link = function ({children, ...restProps} : {to: any, children : string}) {
+Navbar.Link = function ({children, ...restProps} : {to: any, children : ReactNode}) {
     return <Link {...restProps}> {children} </Link>
 }
