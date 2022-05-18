@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import useMockContent from "../hooks/useMockContent"
+import useMockFetch from "../hooks/useMockFetch"
 
 import { getEndpoint } from "../helpers/endpoints"
 
@@ -8,11 +8,14 @@ export default function HeroContainer () {
     const { id } = useParams()
     const userID = id || ""
 
-    const userData = useMockContent(getEndpoint({route: 'default', userID}))
+    const mainData  = useMockFetch(getEndpoint({route: 'main', userID}))
+    const activityData  = useMockFetch(getEndpoint({route: 'activity', userID}))
+    const sessionsData  = useMockFetch(getEndpoint({route: 'sessions', userID}))
+    const performanceData  = useMockFetch(getEndpoint({route: 'performance', userID}))
 
     return (
         <main>
-            Age: {userData.data?.userInfos?.age}
+            Age: {mainData.data.userInfos?.age}
         </main>
     )
 }

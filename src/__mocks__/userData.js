@@ -1,4 +1,4 @@
-export const defaultDatas = [
+export const defaultData = [
     {
         id : 12,
         userInfos : {
@@ -32,7 +32,7 @@ export const defaultDatas = [
     
 ]
 
-export const USER_ACTIVITY = [
+export const activityData = [
     {
         userId: 12,
         sessions: [
@@ -115,7 +115,7 @@ export const USER_ACTIVITY = [
     }
 ]
 
-export const USER_AVERAGE_SESSIONS = [
+export const sessionsData = [
     {
         userId: 12,
         sessions: [
@@ -184,7 +184,7 @@ export const USER_AVERAGE_SESSIONS = [
     }
 ]
 
-export const USER_PERFORMANCE = [
+export const performanceData = [
     {
         userId: 12,
         kind: {
