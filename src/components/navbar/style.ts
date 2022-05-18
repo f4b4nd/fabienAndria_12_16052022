@@ -4,9 +4,9 @@ import { Link as RouterLink } from 'react-router-dom'
 
 export const Container = styled.nav`
     background-color: black;
-    height: 150px;
+    height: 100px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 0 1em;
 `

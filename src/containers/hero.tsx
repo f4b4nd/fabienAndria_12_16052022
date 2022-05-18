@@ -14,9 +14,12 @@ export default function HeroContainer () {
     //const performanceData  = useFetch(getEndpoint({route: 'performance', userID}))
 
     return (
-        <main>
+        <div className="dashboard">
+
             Age: {mainData.userInfos?.age}
+            
             ID: {mainData.id}
-        </main>
+
+        </div>
     )
 }

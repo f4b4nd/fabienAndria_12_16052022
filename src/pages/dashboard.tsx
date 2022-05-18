@@ -1,26 +1,20 @@
 
-import Navbar from "../components/navbar"
+import NavbarContainer from "../containers/navbar"
 import HeroContainer from "../containers/hero"
+import SideNavbarContainer from "../containers/sidebar"
 
 export default function Dashboard () {
     return (
         <>
-            <Navbar>
+            <NavbarContainer />
 
-                <Navbar.Logo to="#" />
-                
-                <Navbar.Link to="#"> Accueil </Navbar.Link>
+            <main>
 
-                <Navbar.Link to="#"> Profil </Navbar.Link>
+                <SideNavbarContainer />
 
-                <Navbar.Link to="#"> Réglages </Navbar.Link>
-        
-                <Navbar.Link to="#"> Communauté </Navbar.Link>
+                <HeroContainer />
 
-            </Navbar>
-
-            <HeroContainer />
-
+            </main>
 
         </>
     )
