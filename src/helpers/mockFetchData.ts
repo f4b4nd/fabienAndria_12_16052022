@@ -6,7 +6,7 @@ interface MockFetchProps extends FetchProps {
     setResponseData: React.Dispatch<any>
 }
 
-export function mockFetchData ({route, endpoint, setResponseData} : MockFetchProps) {
+export default function mockFetchData ({route, endpoint, setResponseData} : MockFetchProps) {
 
     const userID = getUserIdFromEndpoint(endpoint)
 

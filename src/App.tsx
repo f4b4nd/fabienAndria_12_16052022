@@ -1,18 +1,14 @@
 import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Routes,  Route} from 'react-router-dom'
-import HeroContainer from './containers/hero'
+import Dashboard from './pages/dashboard'
 
 export default function App () {
     return (
         <Router>
 
             <Routes>
-                <Route path="user/:id" element={
-                    <>
-                        <HeroContainer />
-                    </>
-                }/>
+                <Route path="dashboard/:id" element={ <Dashboard /> }/>
             </Routes>
 
         </Router>

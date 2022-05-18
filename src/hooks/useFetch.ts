@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import { Route } from '../helpers/endpoints'
 
-import { mockFetchData } from "../helpers/mockFetchData"
+import mockFetchData from "../helpers/mockFetchData"
 
 export interface FetchProps {
     route: Route, 
@@ -13,7 +13,7 @@ export default function useFetch ({route, endpoint} : FetchProps) {
 
     const [ responseData, setResponseData ] = useState({} as any)
     
-    function fetchData({apiURL, endpoint} : {apiURL: string, endpoint: string}) {
+    function fetchData({apiURL, endpoint} : {apiURL: string, endpoint: FetchProps['endpoint']}) {
         
         fetch(apiURL + endpoint)
             .then(response => response.json())
@@ -37,4 +37,3 @@ export default function useFetch ({route, endpoint} : FetchProps) {
     return responseData
 
 }
-
