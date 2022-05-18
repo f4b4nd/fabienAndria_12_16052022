@@ -5,7 +5,8 @@ import CarbsIcon from "../assets/logos/carbs-icon.png"
 import LipidsIcon from "../assets/logos/fat-icon.png"
 import ProteinIcon from "../assets/logos/protein-icon.png"
 
-export default function InfoCardContainer ({data}: {data: any}) {
+
+export default function InfoCardContainer ({data } : {data: any}) {
 
     return (
 
@@ -16,11 +17,8 @@ export default function InfoCardContainer ({data}: {data: any}) {
                 <InfoCard.IconContainer backgroundColor={COLORS.lightRed} src={CaloriesIcon} alt="calories" />
 
                 <InfoCard.TextContainer>
-
                     <InfoCard.Text fontWeight="bold">{data?.calorieCount}g</InfoCard.Text>
-
                     <InfoCard.Text> Calories </InfoCard.Text>
-
                 </InfoCard.TextContainer>
 
             </InfoCard>
@@ -30,11 +28,8 @@ export default function InfoCardContainer ({data}: {data: any}) {
                 <InfoCard.IconContainer backgroundColor={COLORS.lightYellow} src={CarbsIcon} alt="Glucides" />
 
                 <InfoCard.TextContainer>
-
-                    <InfoCard.Text fontWeight="bold">{data?.carbonhydrateCount}g</InfoCard.Text>
-
+                    <InfoCard.Text fontWeight="bold">{data?.carbohydrateCount}g</InfoCard.Text>
                     <InfoCard.Text> Glucides </InfoCard.Text>
-
                 </InfoCard.TextContainer>
 
             </InfoCard>
@@ -46,7 +41,6 @@ export default function InfoCardContainer ({data}: {data: any}) {
                 <InfoCard.TextContainer>
 
                     <InfoCard.Text fontWeight="bold">{data?.proteinCount}g</InfoCard.Text>
-
                     <InfoCard.Text> Lipides </InfoCard.Text>
 
                 </InfoCard.TextContainer>
@@ -58,11 +52,8 @@ export default function InfoCardContainer ({data}: {data: any}) {
                 <InfoCard.IconContainer backgroundColor={COLORS.lightViolet} src={LipidsIcon} alt="Lipides" />
 
                 <InfoCard.TextContainer>
-
                     <InfoCard.Text fontWeight="bold">{data?.lipidCount}g</InfoCard.Text>
-
                     <InfoCard.Text> Lipides </InfoCard.Text>
-
                 </InfoCard.TextContainer>
 
             </InfoCard>
