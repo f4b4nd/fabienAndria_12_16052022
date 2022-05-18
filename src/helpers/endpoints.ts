@@ -9,7 +9,7 @@ export const getEndpoint = ({route, userID} : {route: Route, userID: string}) =>
     }
     return { 
         'route' : route, 
-        'endpoint' :  endpoints[route]
+        'endpoint' : endpoints[route]
     }
 }
 
