@@ -1,7 +1,7 @@
 import { Container, IconContainer, Icon, GroupIcons, Link, Text } from "./style"
 
 
-export default function SideNavbar ({children} : {children: any}) {
+export default function SideNavbar ({children} : {children: JSX.Element[]}) {
 
     return <Container> {children} </Container>
 }
@@ -16,12 +16,12 @@ SideNavbar.IconContainer = function ({to, src, alt} : {to: string, src: string, 
     )
 }
 
-SideNavbar.GroupIcons = function ({children} : {children: any}) {
+SideNavbar.GroupIcons = function ({children} : {children: JSX.Element[]}) {
     return <GroupIcons> {children} </GroupIcons> 
 }
 
 
-SideNavbar.Text = function ({children} : {children: any}) {
+SideNavbar.Text = function ({children} : {children: string}) {
     return (
         <Text> {children} </Text>
     )

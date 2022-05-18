@@ -3,7 +3,7 @@ import SportSeeLogo from '../../assets/logos/sportsee.png'
 import { Container, Logo, LogoImage, Link } from "./style"
 
 
-export default function Navbar ({children} : {children: any}) {
+export default function Navbar ({children} : {children: JSX.Element[]}) {
 
     return <Container> {children} </Container>
 }
@@ -16,6 +16,6 @@ Navbar.Logo = function ({to}: {to : string}) {
     )
 }
 
-Navbar.Link = function ({children, ...restProps} : {to: any, children : any}) {
+Navbar.Link = function ({children, ...restProps} : {to: any, children : string}) {
     return <Link {...restProps}> {children} </Link>
 }
