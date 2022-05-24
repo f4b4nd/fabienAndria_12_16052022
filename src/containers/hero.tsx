@@ -3,7 +3,7 @@ import useFetch from "../hooks/useFetch"
 
 import { getEndpoint } from "../helpers/endpoints"
 
-import RadarChart from "../components/radarchart"
+import RadarChartContainer from "../containers/radarchart"
 import InfoCardContainer from "./infocard"
 
 export default function HeroContainer () {
@@ -13,6 +13,7 @@ export default function HeroContainer () {
 
     const defaultData  = useFetch(getEndpoint({route: 'main', userID}))
     const performanceData  = useFetch(getEndpoint({route: 'performance', userID}))
+    console.log('perf', performanceData)
     //const activityData  = useFetch(getEndpoint({route: 'activity', userID}))
     //const sessionsData  = useFetch(getEndpoint({route: 'sessions', userID}))
 
@@ -23,7 +24,7 @@ export default function HeroContainer () {
 
             ID: {defaultData.id}
 
-            <RadarChart data={performanceData} />
+           <RadarChartContainer rawData={performanceData} />
 
             <InfoCardContainer data={defaultData.keyData}/>
 

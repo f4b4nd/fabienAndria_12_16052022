@@ -1,4 +1,4 @@
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts"
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts"
 
 import { COLORS } from '../../constants'
 
@@ -8,48 +8,16 @@ interface RadarProps {
     [key: string]: any
 }
 
-
-const performanceData = [
-    {
-        subject: "Intensité",
-        value: 90,
-        fullMark: 200
-    },
-    {
-        subject: "Vitesse",
-        value: 200,
-        fullMark: 200
-    },
-    {
-        subject: "Force",
-        value: 50,
-        fullMark: 200
-    },
-    {
-        subject: "Endurance",
-        value: 140,
-        fullMark: 200
-    },
-    {
-        subject: "Energie",
-        value: 120,
-        fullMark: 200
-    },
-    {
-        subject: "Cardio",
-        value: 80,
-        fullMark: 200
-    }
-]
-
 export default function RadarComponent ({data}: RadarProps) {
 
     return (
         <Container className="radar-chart">
-            <ResponsiveContainer width="100%"  height="100%">
+            
+            <ResponsiveContainer width="100%" height="100%">
+
             <RadarChart
                 outerRadius="70%"
-                data={performanceData}
+                data={data}
             >
 
                 <PolarGrid radialLines={false} />
@@ -60,8 +28,8 @@ export default function RadarComponent ({data}: RadarProps) {
                     dy={3}       
                     tickLine={false}
                     tick={{
-                        fontSize: 12,
-                        fontWeight: 500,
+                        fontSize: 14,
+                        fontWeight: 400,
                     }} 
                 />
 
@@ -74,7 +42,9 @@ export default function RadarComponent ({data}: RadarProps) {
 
 
             </RadarChart>
+
             </ResponsiveContainer>
+            
         </Container>
     )
 }

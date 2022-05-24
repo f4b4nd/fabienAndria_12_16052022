@@ -1,9 +1,9 @@
 import InfoCard from "../components/infocard"
 import { COLORS } from "../constants"
-import CaloriesIcon from "../assets/logos/calories-icon.png"
-import CarbsIcon from "../assets/logos/carbs-icon.png"
-import LipidsIcon from "../assets/logos/fat-icon.png"
-import ProteinIcon from "../assets/logos/protein-icon.png"
+import CaloriesIcon from "../assets/icons/calories-icon.png"
+import CarbsIcon from "../assets/icons/carbs-icon.png"
+import LipidsIcon from "../assets/icons/fat-icon.png"
+import ProteinIcon from "../assets/icons/protein-icon.png"
 
 
 interface Data {

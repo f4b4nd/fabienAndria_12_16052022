@@ -1,8 +1,8 @@
 import SideNavbar from "../components/sidenavbar"
-import MeditationLogo from "../assets/logos/meditation.png"
-import SwimmingLogo from "../assets/logos/swimming.png"
-import CyclingLogo from "../assets/logos/cycling.png"
-import LiftingLogo from "../assets/logos/lifting.png"
+import MeditationLogo from "../assets/icons/meditation.png"
+import SwimmingLogo from "../assets/icons/swimming.png"
+import CyclingLogo from "../assets/icons/cycling.png"
+import LiftingLogo from "../assets/icons/lifting.png"
 
 
 export default function SideNavbarContainer () {
