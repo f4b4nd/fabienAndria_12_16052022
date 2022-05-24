@@ -9,16 +9,26 @@ export interface FetchProps {
     endpoint: string,
 }
 
-export default function useFetch ({route, endpoint} : FetchProps) {
+interface ResponseData {
+    [key: string]: any
+}
 
-    const [ responseData, setResponseData ] = useState({} as any)
-    
-    function fetchData({apiURL, endpoint} : {apiURL: string, endpoint: FetchProps['endpoint']}) {
-        
+interface FetchData {
+    apiURL: string,
+    endpoint: string
+}
+
+export default function useFetch({route, endpoint}: FetchProps) {
+
+    const [responseData, setResponseData] = useState<ResponseData>({})
+
+    function fetchData({apiURL, endpoint}: FetchData) {
+
         fetch(apiURL + endpoint)
             .then(response => response.json())
             .then(response => setResponseData(response.data))
             .catch(e => console.log(e))
+
     }
 
     useEffect(() =>  {
@@ -30,7 +40,6 @@ export default function useFetch ({route, endpoint} : FetchProps) {
             return
         }
         mockFetchData({route, endpoint, setResponseData})
-        
 
     }, [route, endpoint])
 
