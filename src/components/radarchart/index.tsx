@@ -3,6 +3,8 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 import { COLORS } from '../../constants'
 
 import { Container } from './style'
+import { RadarChartData } from '../../containers/charts/radarchart'
+
 
 interface RadarProps {
     [key: string]: any
@@ -11,6 +13,7 @@ interface RadarProps {
 export default function RadarComponent ({data}: RadarProps) {
 
     return (
+
         <Container className="radar-chart">
             
             <ResponsiveContainer width="100%" height="100%">
@@ -40,12 +43,12 @@ export default function RadarComponent ({data}: RadarProps) {
                     fillOpacity={0.6}
                 />
 
-
             </RadarChart>
 
             </ResponsiveContainer>
             
         </Container>
+        
     )
 }
   

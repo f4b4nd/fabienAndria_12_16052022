@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom"
-import useFetch from "../hooks/useFetch"
+import useFetch from "../../hooks/useFetch"
 
-import { getEndpoint } from "../helpers/endpoints"
+import { getEndpoint } from "../../helpers/endpoints"
 
-import RadarChartContainer from "../containers/radarchart"
-import InfoCardContainer from "./infocard"
+import RadarChartContainer from "./radarchart"
+import InfoCardContainer from "../infocard"
 
-export default function HeroContainer () {
+export default function ChartsContainer () {
 
     const { id } = useParams()
     const userID = id || ""
@@ -20,11 +20,7 @@ export default function HeroContainer () {
     return (
         <div className="dashboard">
 
-            Age: {defaultData.userInfos?.age}
-
-            ID: {defaultData.id}
-
-           <RadarChartContainer rawData={performanceData} />
+            <RadarChartContainer performanceData={performanceData} />
 
             <InfoCardContainer data={defaultData.keyData}/>
 

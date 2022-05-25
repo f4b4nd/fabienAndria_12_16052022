@@ -1,7 +1,8 @@
 
 import NavbarContainer from "../containers/navbar"
-import HeroContainer from "../containers/hero"
 import SideNavbarContainer from "../containers/sidebar"
+import ChartsContainer from "../containers/charts"
+
 
 export default function Dashboard () {
     return (
@@ -12,7 +13,7 @@ export default function Dashboard () {
 
                 <SideNavbarContainer />
 
-                <HeroContainer />
+                <ChartsContainer />
 
             </main>
 
