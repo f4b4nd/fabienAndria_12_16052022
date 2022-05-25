@@ -1,10 +1,12 @@
 import { ReactNode } from "react"
-import { LineChart, Line, Tooltip } from "recharts"
+import { LineChart, Line, Tooltip, XAxis, ResponsiveContainer} from "recharts"
+
 import { COLORS } from "../../constants"
+import { LineChartData } from "../../containers/charts/linechart"
 
 import { Container, Text } from "./style"
 
-export default function LineChartComponent ({lineChartData, children}: {lineChartData: any[], children: ReactNode}) {
+export default function LineChartComponent ({lineChartData, children}: {lineChartData: LineChartData[], children: ReactNode}) {
 
     return (
 
@@ -12,18 +14,32 @@ export default function LineChartComponent ({lineChartData, children}: {lineChar
 
             {children}
 
-            <LineChart 
-                width={300} 
-                height={300} 
-                data={lineChartData}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-            >
-            
-                <Tooltip />
+            <ResponsiveContainer>
 
-                <Line type="monotone" dataKey="pv" stroke={COLORS.lightGrey} />
+                <LineChart 
+                    width={300} 
+                    height={300} 
+                    data={lineChartData}
+                    margin={{ top: 15, right: 10, left: 10, bottom: 15 }}
+                    outerRadius="75%"
+                >
+                    <XAxis 
+                        dataKey="dayLabel" 
+                        stroke="white"
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{
+                          fontSize: 13
+                        }}
+                    />
 
-            </LineChart>
+                    <Tooltip />
+
+                    <Line type="monotone" dataKey="sessionLength" stroke="white" />
+
+                </LineChart>
+
+            </ResponsiveContainer>
 
         </Container>
 

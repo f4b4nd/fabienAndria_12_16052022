@@ -4,7 +4,7 @@ import { COLORS } from "../../constants"
 export const Container = styled.div`
     height: 300px;
     width: 300px;
-    background-color: ${COLORS.red};
+    background-color: ${COLORS.fluoRed};
     position: relative;
     border-radius: 5px;
 `
