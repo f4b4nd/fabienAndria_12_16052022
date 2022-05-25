@@ -1,9 +1,5 @@
 import styled from "styled-components"
-
-
-interface ContainerProps {
-    backgroundColor? : string
-}
+import { COLORS } from "../../constants"
 
 
 interface IconContainerProps {
@@ -15,13 +11,13 @@ interface TextProps {
     fontWeight? : string
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
     height: 120px;
     width: 250px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    ${({backgroundColor}) => backgroundColor && `background-color: ${backgroundColor}`};
+    background-color: ${COLORS.lightGrey};
 `
 
 export const Group = styled.div`

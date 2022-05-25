@@ -1,12 +1,11 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 
 import SportSeeLogo from '../../assets/logos/sportsee.png'
 
 import { Container, Logo, LogoImage, Link } from "./style"
 
 
-export default function Navbar ({children} : {children: ReactNode}) {
-
+export default function Navbar ({children}: {children: ReactNode}) {
     return <Container> {children} </Container>
 }
 

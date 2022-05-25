@@ -11,18 +11,18 @@ export const Container = styled.aside`
     align-items: center;
 `
 
-export const IconContainer = styled.div`
+export const ImageContainer = styled.div`
     height: 60px;
     width: 60px;
     overflow: hidden;
 `
 
-export const Icon = styled.img`
+export const Image = styled.img`
     height: 100% ;
     width: 100% ;
 `
 
-export const GroupIcons = styled.div`
+export const Column = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 2em;

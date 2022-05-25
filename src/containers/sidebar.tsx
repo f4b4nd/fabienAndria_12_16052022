@@ -10,17 +10,17 @@ export default function SideNavbarContainer () {
 
         <SideNavbar>
 
-            <SideNavbar.GroupIcons>
+            <SideNavbar.Column>
 
-                <SideNavbar.IconContainer to="#" src={MeditationLogo} alt="meditation"/>
+                <SideNavbar.ImageContainer to="#" src={MeditationLogo} alt="meditation"/>
 
-                <SideNavbar.IconContainer to="#" src={SwimmingLogo} alt="swimming"/>
+                <SideNavbar.ImageContainer to="#" src={SwimmingLogo} alt="swimming"/>
 
-                <SideNavbar.IconContainer to="#" src={CyclingLogo} alt="cycling"/>
+                <SideNavbar.ImageContainer to="#" src={CyclingLogo} alt="cycling"/>
 
-                <SideNavbar.IconContainer to="#" src={LiftingLogo} alt="lifting"/>
+                <SideNavbar.ImageContainer to="#" src={LiftingLogo} alt="lifting"/>
 
-            </SideNavbar.GroupIcons>
+            </SideNavbar.Column>
             
             <SideNavbar.Text> Copyright, Sportsee 2020 </SideNavbar.Text>
 

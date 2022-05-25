@@ -1,11 +1,9 @@
 import RadarComponent from "../../components/radarchart"
 
-interface ObjectProps {
-    [key: string]: any,
-}
+import { ObjectProps } from "./"
 
 interface PerformanceData {
-    kind: ObjectProps,
+    kind: ObjectProps
     data: {
         kind: number,
         value: number
@@ -45,8 +43,8 @@ function getRadarChartData (performanceData: PerformanceData): RadarChartData[] 
     const radarChartData: RadarChartData[] = performanceData.data?.reduce((acc, item) => {
 
         const kindIndex = item.kind
-        const kindLabel = performanceData.kind[kindIndex]
-        const translatedKindLabel = KindsTypes[kindLabel as keyof typeof KindsTypes].translation
+        const kindLabel: keyof typeof KindsTypes = performanceData.kind[kindIndex]
+        const translatedKindLabel = KindsTypes[kindLabel].translation
 
         const newItem = {
             value: item.value,
@@ -58,7 +56,7 @@ function getRadarChartData (performanceData: PerformanceData): RadarChartData[] 
     }, [] as RadarChartData[])
 
     const sortedRadarChartData: RadarChartData[] = radarChartData?.sort((a, b) => {
-        const kindsTypes = Object.values(KindsTypes) 
+        const kindsTypes = Object.values(KindsTypes)
         const kindType1 = kindsTypes.find(kindType => kindType.translation === a.subject)
         const kindtype2 = kindsTypes.find(kindType => kindType.translation === b.subject)
 

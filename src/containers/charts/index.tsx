@@ -4,7 +4,11 @@ import useFetch from "../../hooks/useFetch"
 import { getEndpoint } from "../../helpers/endpoints"
 
 import RadarChartContainer from "./radarchart"
-import InfoCardContainer from "../infocard"
+import CardContainer from "./card"
+
+export interface ObjectProps {
+    [key: string]: any,
+}
 
 export default function ChartsContainer () {
 
@@ -22,7 +26,7 @@ export default function ChartsContainer () {
 
             <RadarChartContainer performanceData={performanceData} />
 
-            <InfoCardContainer data={defaultData.keyData}/>
+            <CardContainer data={defaultData.keyData}/>
 
         </div>
     )

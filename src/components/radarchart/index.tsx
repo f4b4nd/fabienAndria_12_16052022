@@ -3,14 +3,11 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 import { COLORS } from '../../constants'
 
 import { Container } from './style'
+
 import { RadarChartData } from '../../containers/charts/radarchart'
 
 
-interface RadarProps {
-    [key: string]: any
-}
-
-export default function RadarComponent ({data}: RadarProps) {
+export default function RadarComponent ({data}: {data: RadarChartData[]}) {
 
     return (
 
