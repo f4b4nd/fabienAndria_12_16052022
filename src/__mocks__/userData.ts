@@ -29,7 +29,6 @@ export const defaultData = [
             lipidCount : 120
         }
     }
-    
 ]
 
 export const activityData = [

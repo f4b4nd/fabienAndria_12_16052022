@@ -5,6 +5,7 @@ import { getEndpoint } from "../../helpers/endpoints"
 
 import RadarChartContainer from "./radarchart"
 import CardContainer from "./card"
+import PieChartContainer from "./piechart"
 
 export interface ObjectProps {
     [key: string]: any,
@@ -27,6 +28,8 @@ export default function ChartsContainer () {
             <RadarChartContainer performanceData={performanceData} />
 
             <CardContainer data={defaultData.keyData}/>
+
+            <PieChartContainer score={defaultData.todayScore || defaultData.score} />
 
         </div>
     )

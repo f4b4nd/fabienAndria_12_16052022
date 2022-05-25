@@ -1,42 +1,51 @@
-import { PieChart, Pie, ResponsiveContainer } from "recharts"
+import { ReactNode } from "react"
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
 
-const data01 = [
-    {
-        "name": "Group A",
-        "value": 400
-    },
-    {
-        "name": "Group B",
-        "value": 300
-    },
-    {
-        "name": "Group C",
-        "value": 300
-    },
-    {
-        "name": "Group D",
-        "value": 200
-    },
-    {
-        "name": "Group E",
-        "value": 278
-    },
-    {
-        "name": "Group F",
-        "value": 189
-    }
-]
+import { Container, Title, Text} from "./style"
 
-export default function PieChartComponent ({data}: any) {
+export default function PieChartComponent ({pieChartData, children}: {pieChartData: any[], children: ReactNode}) {
     return (
-        <ResponsiveContainer>
+        <Container className="pie-chart">
 
-            <PieChart width={730} height={250}>
+            {children}
 
-                <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
+            <ResponsiveContainer width="100%" height="100%">
 
-            </PieChart>
+                <PieChart >
 
-        </ResponsiveContainer>
+                    <Pie
+                        data={pieChartData}                        
+                        dataKey="value"
+                        innerRadius={100}
+                        outerRadius={120}
+                        startAngle={90}
+                        endAngle={450}
+                        cx="50%"
+                        cy="50%"
+                        fill="red"
+                    >
+
+                        {pieChartData.map((entry, index) => (
+                            <Cell 
+                                key={`cell-${index}`} 
+                                fill={entry.color}
+                            />
+                        ))}
+
+                    </Pie>
+
+                </PieChart>
+
+            </ResponsiveContainer>
+
+        </Container>
     )
+}
+
+PieChartComponent.Title = function ({children}: {children: ReactNode}) {
+    return <Title> {children} </Title>
+}
+
+PieChartComponent.Text = function ({children}: {children: ReactNode}) {
+    return <Text> {children} </Text>
 }

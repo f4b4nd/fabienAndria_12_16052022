@@ -45,8 +45,8 @@ export default function CardContainer ({ data } : {data: Data}) {
     return (
         <Card.Group>
 
-            {cardData.map((item) => (
-                <Card>
+            {cardData.map((item, idx) => (
+                <Card key={idx}>
 
                     <Card.IconContainer backgroundColor={item.backgroundColor} src={item.src} alt={item.label} />
 
