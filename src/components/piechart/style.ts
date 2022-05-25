@@ -6,7 +6,6 @@ export const Container = styled.div`
     height: 300px;
     background-color: ${COLORS.lightGrey};
     border-radius: 5px;
-    border: 1px solid black;
     position: relative;
 `
 

@@ -6,6 +6,7 @@ import { getEndpoint } from "../../helpers/endpoints"
 import RadarChartContainer from "./radarchart"
 import CardContainer from "./card"
 import PieChartContainer from "./piechart"
+import LineChartContainer from "./linechart"
 
 export interface ObjectProps {
     [key: string]: any,
@@ -18,9 +19,9 @@ export default function ChartsContainer () {
 
     const defaultData  = useFetch(getEndpoint({route: 'main', userID}))
     const performanceData  = useFetch(getEndpoint({route: 'performance', userID}))
-    console.log('perf', performanceData)
     //const activityData  = useFetch(getEndpoint({route: 'activity', userID}))
-    //const sessionsData  = useFetch(getEndpoint({route: 'sessions', userID}))
+    const sessionsData  = useFetch(getEndpoint({route: 'sessions', userID}))
+    console.log('sess', sessionsData)
 
     return (
         <div className="dashboard">
@@ -30,6 +31,8 @@ export default function ChartsContainer () {
             <CardContainer data={defaultData.keyData}/>
 
             <PieChartContainer score={defaultData.todayScore || defaultData.score} />
+
+            <LineChartContainer data={sessionsData.sessions} />
 
         </div>
     )
