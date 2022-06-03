@@ -7,10 +7,15 @@ export interface BarChartData {
     dayLabel: string,
 }
 
+/**<BarChart.Legend> Poids (kg) </BarChart.Legend>
+    <BarChart.Legend> Calories brulées (kCal) </BarChart.Legend>
+ */
+
 export default function BarChartContainer({data}: {data: BarChartData[]}) {
     return (
         <BarChart barChartData={getBarChartData(data)}>
-
+            <BarChart.Title> Activité quotidienne </BarChart.Title>
+            
         </BarChart>
     )
 

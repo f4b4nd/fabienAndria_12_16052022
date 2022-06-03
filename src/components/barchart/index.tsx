@@ -1,8 +1,8 @@
 import { ReactNode } from "react"
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
-import { Container, Text } from './style'
+import { Container, Title, Legend, LegendBullet } from './style'
 import { BarChartData } from '../../containers/charts/barchart'
 import { COLORS } from "../../constants"
 
@@ -18,6 +18,7 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
                 <BarChart
                     width={500}
                     height={300}
+                    barCategoryGap="30%"
                     data={barChartData}
                     margin={{
                         top: 5,
@@ -30,15 +31,38 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
 
                     <XAxis dataKey="dayLabel" />
 
-                    <YAxis />
+                    <YAxis
+                        yAxisId="kg"
+                        dataKey="kilogram"
+                        allowDecimals={false}
+                        orientation="right"
+                        axisLine={false}
+                        tickLine={false}                    
+                    />
+
+                    <YAxis
+                        yAxisId="cal"
+                        dataKey="calories"
+                        hide={true}
+                    />
 
                     <Tooltip />
 
-                    <Legend />
+                    <Bar 
+                        dataKey="kilogram" 
+                        fill="black"
+                        yAxisId="kg"
+                        maxBarSize={8}
+                        radius={[50, 50, 0, 0]}
+                    />
 
-                    <Bar dataKey="kilogram" fill="black" />
-
-                    <Bar dataKey="calories" fill={COLORS.fluoRed} />
+                    <Bar 
+                        dataKey="calories" 
+                        fill={COLORS.fluoRed}
+                        yAxisId="cal"
+                        maxBarSize={8}
+                        radius={[50, 50, 0, 0]}            
+                    />
 
                 </BarChart>
 
@@ -48,6 +72,15 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
     )
 }
 
-BarChartComponent.Text = function ({children}: {children: ReactNode}) {
-    return <Text> {children} </Text>
+BarChartComponent.Title = function ({children}: {children: ReactNode}) {
+    return <Title> {children} </Title>
+}
+
+BarChartComponent.Legend = function ({children}: {children: ReactNode}) {
+    return (
+        <Legend>
+            <LegendBullet />
+             {children} 
+        </Legend>
+    )
 }

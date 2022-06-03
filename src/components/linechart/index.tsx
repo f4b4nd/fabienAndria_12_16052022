@@ -47,6 +47,8 @@ export default function LineChartComponent ({lineChartData, children}: {lineChar
 
 }
 
+
+
 LineChartComponent.Text = function ({children}: {children: ReactNode}) {
     return <Text> {children} </Text>
 }
