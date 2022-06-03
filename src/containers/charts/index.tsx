@@ -7,6 +7,7 @@ import RadarChartContainer from "./radarchart"
 import CardContainer from "./card"
 import PieChartContainer from "./piechart"
 import LineChartContainer from "./linechart"
+import BarChartContainer from "./barchart"
 
 export interface ObjectProps {
     [key: string]: any,
@@ -26,14 +27,43 @@ export default function ChartsContainer () {
     return (
         <div className="dashboard">
 
-            <RadarChartContainer performanceData={performanceData} />
+            <div className="title">
+                
+                <h1> Bonjour <span className="name"> Thomas </span></h1>
+                
+                <h2> Félicitations, vous avez explosé vos objectifs hier <span className="emoji"> &#128079; </span> </h2>
 
-            <CardContainer data={defaultData.keyData}/>
+            </div>
 
-            <PieChartContainer score={defaultData.todayScore || defaultData.score} />
+            <div className="row">
+            
+                <div className="col">
 
-            <LineChartContainer data={sessionsData.sessions} />
+                    <div className="row">
 
+                        <BarChartContainer />
+
+                    </div>
+
+                    <div className="row">
+
+                        <LineChartContainer data={sessionsData.sessions} />
+
+                        <RadarChartContainer performanceData={performanceData} />
+
+                        <PieChartContainer score={defaultData.todayScore || defaultData.score} />
+
+                    </div>
+
+                </div>
+
+                <div className="col">
+
+                    <CardContainer data={defaultData.keyData}/>
+
+                </div>
+
+            </div>
         </div>
     )
 }

@@ -23,7 +23,7 @@ export default function LineChartComponent ({lineChartData, children}: {lineChar
                     margin={{ top: 15, right: 10, left: 10, bottom: 15 }}
                     outerRadius="75%"
                 >
-                    <XAxis 
+                    <XAxis
                         dataKey="dayLabel" 
                         stroke="white"
                         axisLine={false}
