@@ -1,9 +1,10 @@
 import { ReactNode } from "react"
 
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 
 import { Container, Text } from './style'
 import { BarChartData } from '../../containers/charts/barchart'
+import { COLORS } from "../../constants"
 
 export default function BarChartComponent({barChartData, children}: {barChartData: BarChartData[], children: ReactNode}) {
     return (
@@ -13,7 +14,7 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
             {children}
 
             <ResponsiveContainer width="100%" height="100%">
-                
+
                 <BarChart
                     width={500}
                     height={300}
@@ -27,7 +28,7 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
                 >
                     <CartesianGrid strokeDasharray="3 3" />
 
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="dayLabel" />
 
                     <YAxis />
 
@@ -35,9 +36,9 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
 
                     <Legend />
 
-                    <Bar dataKey="pv" fill="#8884d8" />
+                    <Bar dataKey="kilogram" fill="black" />
 
-                    <Bar dataKey="uv" fill="#82ca9d" />
+                    <Bar dataKey="calories" fill={COLORS.fluoRed} />
 
                 </BarChart>
 

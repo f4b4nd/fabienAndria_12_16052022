@@ -12,7 +12,7 @@ interface TextProps {
 }
 
 export const Container = styled.div`
-    height: 120px;
+    height: 140px;
     width: 250px;
     display: flex;
     justify-content: space-evenly;
@@ -23,7 +23,8 @@ export const Container = styled.div`
 export const Group = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 1.5em;
+    justify-content: space-between;
+    flex: 1;
 `
 
 export const Icon = styled.img`

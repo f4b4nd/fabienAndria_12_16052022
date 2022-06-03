@@ -20,7 +20,7 @@ export default function ChartsContainer () {
 
     const defaultData  = useFetch(getEndpoint({route: 'main', userID}))
     const performanceData  = useFetch(getEndpoint({route: 'performance', userID}))
-    //const activityData  = useFetch(getEndpoint({route: 'activity', userID}))
+    const activityData  = useFetch(getEndpoint({route: 'activity', userID}))
     const sessionsData  = useFetch(getEndpoint({route: 'sessions', userID}))
     console.log('sess', sessionsData)
 
@@ -29,7 +29,7 @@ export default function ChartsContainer () {
 
             <div className="title">
                 
-                <h1> Bonjour <span className="name"> Thomas </span></h1>
+                <h1> Bonjour <span className="name"> {defaultData.userInfos?.firstName} </span></h1>
                 
                 <h2> Félicitations, vous avez explosé vos objectifs hier <span className="emoji"> &#128079; </span> </h2>
 
@@ -37,11 +37,11 @@ export default function ChartsContainer () {
 
             <div className="row">
             
-                <div className="col">
+                <div className="col charts">
 
                     <div className="row">
 
-                        <BarChartContainer />
+                        <BarChartContainer data={activityData.sessions} />
 
                     </div>
 
@@ -57,7 +57,7 @@ export default function ChartsContainer () {
 
                 </div>
 
-                <div className="col">
+                <div className="col cards">
 
                     <CardContainer data={defaultData.keyData}/>
 

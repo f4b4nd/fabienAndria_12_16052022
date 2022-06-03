@@ -3,36 +3,31 @@ main {
 }
 
 .dashboard {
+    margin-bottom: 2em;
     padding: 0 100px;
-    border: 1px solid black;
-    flex: 1;
 }
 
 .dashboard .row {
     display: flex;
-    gap: 1em;
+    justify-content: space-between;
+    gap: 3em;
 }
 
 .dashboard .col {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    border: 1px solid red;
+    gap: 2em;
 }
 
-.dashboard .col:first-child {
-    flex-basis: 80%;
-}
-
-.dashboard .col:nth-child(2) {
-    flex: 1;
+.dashboard .col.charts {
+    flex-basis: 60%;
 }
 
 .dashboard .title {
     margin-top: 1em;
     margin-bottom: 3em;
 }
+
 .dashboard .name {
     color: #ff0000;
 }
