@@ -2,11 +2,11 @@ import { ReactNode } from "react"
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
-import { Container, Title, Legend, LegendText, LegendBullet, LegendGroup } from './style'
+import { Container, Title, Legend, LegendText, LegendBullet, LegendGroup, TooltipContainer, TooltipLine } from './style'
 import { BarChartData } from '../../containers/charts/barchart'
 import { COLORS } from "../../constants"
 
-export default function BarChartComponent({barChartData, children}: {barChartData: BarChartData[], children: ReactNode}) {
+export default function BarChartComponent({barChartData, customTooltip, children}: {barChartData: BarChartData[], customTooltip: any, children: ReactNode}) {
     return (
 
         <Container className="bar-chart">
@@ -21,10 +21,10 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
                     barCategoryGap="30%"
                     data={barChartData}
                     margin={{
-                        top: 5,
+                        top: 90,
                         right: 30,
-                        left: 20,
-                        bottom: 5,
+                        bottom: 30,
+                        left: 30,
                     }}
                 >
                     <CartesianGrid 
@@ -32,7 +32,10 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
                         vertical={false}
                     />
 
-                    <XAxis dataKey="dayLabel" />
+                    <XAxis 
+                        dataKey="dayLabel"
+                        dy={16}
+                    />
 
                     <YAxis
                         yAxisId="kg"
@@ -40,16 +43,17 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
                         allowDecimals={false}
                         orientation="right"
                         axisLine={false}
-                        tickLine={false}                    
+                        tickLine={false}
+                        domain={["dataMin - 1", "dataMax + 1"]}
+                        dx={48}
                     />
 
                     <YAxis
                         yAxisId="cal"
                         dataKey="calories"
                         hide={true}
+                        domain={[0, "dataMax"]}
                     />
-
-                    <Tooltip />
 
                     <Bar 
                         dataKey="kilogram" 
@@ -66,6 +70,8 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
                         maxBarSize={8}
                         radius={[50, 50, 0, 0]}            
                     />
+
+                    <Tooltip content={customTooltip} />
 
                 </BarChart>
 
@@ -90,5 +96,22 @@ BarChartComponent.Legend = function ({bulletColor, children}: {bulletColor: stri
             <LegendBullet className="legend__bullet" bulletColor={bulletColor} />
             <LegendText className="legend__text"> {children}  </LegendText>
         </Legend>
+    )
+}
+
+
+BarChartComponent.TooltipContainer = function ({children}: {children: ReactNode}) {
+    return (
+        <TooltipContainer> 
+            {children}
+        </TooltipContainer>
+    )
+}
+
+BarChartComponent.TooltipLine = function ({children}: {children: ReactNode}) {
+    return (
+        <TooltipLine> 
+            {children}
+        </TooltipLine>
     )
 }

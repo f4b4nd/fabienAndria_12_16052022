@@ -10,6 +10,7 @@ export const Container = styled.div`
     height: 400px;
     flex: 1;
     position: relative;
+    background-color: ${COLORS.lightGrey};
 `
 export const Title = styled.h3`
     margin: 0;
@@ -43,6 +44,19 @@ export const LegendGroup = styled.div`
     column-gap: 3em;
     position: absolute;
     top: 20px;
-    right: 120px;
+    right: 50px;
     z-index: 1;
+`
+
+export const TooltipContainer = styled.div`
+    z-index: -100;
+`
+
+export const TooltipLine = styled.div`
+    background-color: ${COLORS.fluoRed};
+    margin: 0;
+    padding: 1em 0.7em;
+    color: white;
+    font-size: 1em;
+    z-index: -1;
 `

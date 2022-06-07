@@ -12,7 +12,8 @@ export interface BarChartData {
 
 export default function BarChartContainer({data}: {data: BarChartData[]}) {
     return (
-        <BarChart barChartData={getBarChartData(data)}>
+        <BarChart barChartData={getBarChartData(data)} customTooltip={<CustomTooltip payload={data} />}>
+
             <BarChart.Title> Activité quotidienne </BarChart.Title>
 
             <BarChart.LegendGroup>
@@ -30,4 +31,13 @@ function getBarChartData(data: BarChartData[]): BarChartData[] {
         dayLabel: `${idx + 1}`
     }))
     return barChartData
+}
+
+function CustomTooltip ({payload}: {payload: any}) {
+    return (
+        <BarChart.TooltipContainer>
+            <BarChart.TooltipLine> {payload[0]?.value}Kg </BarChart.TooltipLine>
+            <BarChart.TooltipLine> {payload[1]?.value}Kcal </BarChart.TooltipLine>
+        </BarChart.TooltipContainer>
+    )
 }
