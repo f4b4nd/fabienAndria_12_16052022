@@ -22,7 +22,6 @@ export default function ChartsContainer () {
     const performanceData  = useFetch(getEndpoint({route: 'performance', userID}))
     const activityData  = useFetch(getEndpoint({route: 'activity', userID}))
     const sessionsData  = useFetch(getEndpoint({route: 'sessions', userID}))
-    console.log('sess', sessionsData)
 
     return (
         <div className="dashboard">

@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+import { COLORS } from '../../constants'
+
+interface LegendBulletProps {
+    bulletColor: string
+}
+
 export const Container = styled.div`
     height: 400px;
     flex: 1;
@@ -9,22 +15,34 @@ export const Title = styled.h3`
     margin: 0;
     position: absolute;
     top: 20px;
-    left: 100px;
+    left: 50px;
     z-index: 1;
 `
 
 export const Legend = styled.span`
-    position: absolute;
-    top: 20px;
-    right: 50px;
+    display: flex;
+    align-items: center;
+    column-gap: 0.3em; 
+
 `
+
 export const LegendText = styled.span`
-
+    font-size: 1em;
+    color: ${COLORS.grey};
 `
 
-export const LegendBullet = styled.span`
-    border: 1px solid black;
+export const LegendBullet = styled.span<LegendBulletProps>`
     height: 10px;
     width: 10px;
     border-radius: 50%;
+    ${({bulletColor}) => bulletColor && `background-color: ${bulletColor}`};
+`
+
+export const LegendGroup = styled.div`
+    display: flex;
+    column-gap: 3em;
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    z-index: 1;
 `

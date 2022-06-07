@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
-import { Container, Title, Legend, LegendBullet } from './style'
+import { Container, Title, Legend, LegendText, LegendBullet, LegendGroup } from './style'
 import { BarChartData } from '../../containers/charts/barchart'
 import { COLORS } from "../../constants"
 
@@ -27,7 +27,10 @@ export default function BarChartComponent({barChartData, children}: {barChartDat
                         bottom: 5,
                     }}
                 >
-                    <CartesianGrid strokeDasharray="3 3" />
+                    <CartesianGrid 
+                        strokeDasharray="3 3"
+                        vertical={false}
+                    />
 
                     <XAxis dataKey="dayLabel" />
 
@@ -76,11 +79,16 @@ BarChartComponent.Title = function ({children}: {children: ReactNode}) {
     return <Title> {children} </Title>
 }
 
-BarChartComponent.Legend = function ({children}: {children: ReactNode}) {
+BarChartComponent.LegendGroup = function ({children}: {children: ReactNode}) {
+    return <LegendGroup className="legend-group"> {children} </LegendGroup>
+}
+
+
+BarChartComponent.Legend = function ({bulletColor, children}: {bulletColor: string, children: ReactNode}) {
     return (
-        <Legend>
-            <LegendBullet />
-             {children} 
+        <Legend className="legend" >
+            <LegendBullet className="legend__bullet" bulletColor={bulletColor} />
+            <LegendText className="legend__text"> {children}  </LegendText>
         </Legend>
     )
 }
