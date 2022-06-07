@@ -71,7 +71,12 @@ export default function BarChartComponent({barChartData, customTooltip, children
                         radius={[50, 50, 0, 0]}            
                     />
 
-                    <Tooltip content={customTooltip} />
+                    <Tooltip 
+                        content={customTooltip}
+                        cursor={{
+                            fill: "rgba(0, 0, 0, 0.05)",
+                        }}
+                    />
 
                 </BarChart>
 

@@ -7,6 +7,7 @@ export interface BarChartData {
     kilogram: number,
     calories: number,
     dayLabel?: string,
+    value?: string
 }
 
 
@@ -33,7 +34,7 @@ function getBarChartData(data: BarChartData[]): BarChartData[] {
     return barChartData
 }
 
-function CustomTooltip ({payload}: {payload: any}) {
+function CustomTooltip ({payload}: { payload: {value? : string}[] }) {
     return (
         <BarChart.TooltipContainer>
             <BarChart.TooltipLine> {payload[0]?.value}Kg </BarChart.TooltipLine>

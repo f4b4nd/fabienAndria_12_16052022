@@ -49,7 +49,7 @@ export const LegendGroup = styled.div`
 `
 
 export const TooltipContainer = styled.div`
-    z-index: -100;
+    z-index: -1;
 `
 
 export const TooltipLine = styled.div`
