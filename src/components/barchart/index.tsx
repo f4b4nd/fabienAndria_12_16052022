@@ -91,13 +91,13 @@ BarChartComponent.Title = function ({children}: {children: ReactNode}) {
 }
 
 BarChartComponent.LegendGroup = function ({children}: {children: ReactNode}) {
-    return <LegendGroup className="legend-group"> {children} </LegendGroup>
+    return <LegendGroup className="legend"> {children} </LegendGroup>
 }
 
 
 BarChartComponent.Legend = function ({bulletColor, children}: {bulletColor: string, children: ReactNode}) {
     return (
-        <Legend className="legend" >
+        <Legend className="legend__item" >
             <LegendBullet className="legend__bullet" bulletColor={bulletColor} />
             <LegendText className="legend__text"> {children}  </LegendText>
         </Legend>
