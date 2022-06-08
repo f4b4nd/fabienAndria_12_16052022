@@ -33,7 +33,7 @@ export default function useFetch({route, endpoint}: FetchProps) {
 
     useEffect(() =>  {
 
-        const apiURL = false //process.env.REACT_APP_API_URL
+        const apiURL = process.env.REACT_APP_API_URL
 
         if (apiURL) {
             fetchData({apiURL, endpoint})
