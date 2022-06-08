@@ -19,7 +19,7 @@ export default function BarChartContainer({data}: {data: BarChartData[]}) {
 
             <BarChart.LegendGroup>
                 <BarChart.Legend bulletColor="black"> Poids (kg) </BarChart.Legend>
-                <BarChart.Legend bulletColor={COLORS.fluoRed}> Calories brulées (kCal) </BarChart.Legend>
+                <BarChart.Legend bulletColor={COLORS.fluoRed}> Calories brûlées (kCal) </BarChart.Legend>
             </BarChart.LegendGroup>
             
         </BarChart>

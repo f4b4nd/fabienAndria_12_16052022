@@ -44,7 +44,6 @@ function getLineChartData(data: SessionData[]): LineChartData[] {
 }
 
 function CustomTooltip ({payload}: { payload: {value? : string}[] }) {
-    console.log('custom', payload)
     return (
         <LineChart.TooltipContainer>
              {payload[0]?.value} min

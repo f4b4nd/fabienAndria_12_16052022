@@ -11,9 +11,12 @@ export const Container = styled.div`
 
 export const Text = styled.span`
     position: absolute;
-    top: 10px;
-    left: 10px;
-    color: white;
+    top: 30px;
+    left: 40px;
+    max-width: 170px;
+    font-size: 1.1em;
+    color: ${COLORS.lightGrey};
+    opacity: 0.6;
 `
 
 export const TooltipContainer = styled.div`

@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { LineChart, Line, Tooltip, XAxis, ResponsiveContainer} from "recharts"
+import { LineChart, Line, Tooltip, XAxis, YAxis, ResponsiveContainer} from "recharts"
 
 import { LineChartData } from "../../containers/charts/linechart"
 
@@ -19,12 +19,12 @@ export default function LineChartComponent ({lineChartData, customTooltip, child
                     width={300} 
                     height={300} 
                     data={lineChartData}
-                    margin={{ top: 15, right: 10, left: 10, bottom: 15 }}
+                    margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
                     outerRadius="75%"
                 >
                     <XAxis
                         dataKey="dayLabel" 
-                        stroke="white"
+                        stroke="rgba(255, 255, 255, 0.5)"
                         axisLine={false}
                         tickLine={false}
                         tick={{
@@ -32,18 +32,30 @@ export default function LineChartComponent ({lineChartData, customTooltip, child
                         }}
                     />
 
+                    <YAxis
+                        dataKey="sessionLength"
+                        domain={[0, "dataMax + 30"]}
+                        hide={true}
+                    />
+
                     <Tooltip 
                         content={customTooltip}
                         cursor={{
                             stroke: "rgba(0, 0, 0, 0.05)",
-                            strokeWidth: 40,
+                            strokeWidth: 60,
                         }}
                     />
 
                     <Line 
                         dataKey="sessionLength"
                         type="monotone" 
-                        stroke="white" 
+                        stroke="rgba(255, 255, 255, 0.7)"
+                        dot={false}
+                        activeDot={{
+                            stroke: "rgba(255,255,255, 0.5)",
+                            strokeWidth: 8,
+                            r: 4,
+                        }}
                     />
 
                 </LineChart>
