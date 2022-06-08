@@ -24,7 +24,7 @@ You can clone this custom repository with the following command :
 ### 2.3 Launch backend
 - Get into the folder : `cd ./sportsee-api-docker-compose/`
 - Run the commmand : `docker-compose up`
-- Backend is now available on port 3001 !
+- Backend is now available on `port 3001`
 
 ---
 
@@ -42,7 +42,7 @@ You can clone this custom repository with the following command :
 2. Install dependencies
 - `npm install`
 
-1. Launch frontend on port 3000
+3. Launch frontend on `port 3000`
 - `npm run start` 
 
 4. If you want to use an external api, then you need to set an environnement variable called `REACT_APP_API_URL`
