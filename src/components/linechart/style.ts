@@ -15,3 +15,10 @@ export const Text = styled.span`
     left: 10px;
     color: white;
 `
+
+export const TooltipContainer = styled.div`
+    background-color: white;
+    margin: 0;
+    padding: 1em 0.7em;
+    font-size: 1em;
+`

@@ -48,9 +48,7 @@ export const LegendGroup = styled.div`
     z-index: 1;
 `
 
-export const TooltipContainer = styled.div`
-    z-index: -1;
-`
+export const TooltipContainer = styled.div``
 
 export const TooltipLine = styled.div`
     background-color: ${COLORS.fluoRed};
