@@ -4,7 +4,9 @@ main {
 
 .dashboard {
     margin-bottom: 2em;
-    padding: 0 50px;
+    padding-left: 100px;
+    padding-right: 50px;
+    padding-top: 50px;
     flex: 1;
 }
 
@@ -16,10 +18,14 @@ main {
 }
 
 .dashboard .charts {
-    flex-basis: 70%;
     display: flex;
     flex-direction: column;
     row-gap: 2em;
+    margin-right: 1em;
+}
+
+.dashboard .charts__grid {
+    column-gap: 1.2em;
 }
 
 .dashboard .cards {
@@ -51,7 +57,7 @@ h2 {
 @media screen and (min-width: 700px) and (max-width: 1300px) {
     .row {
         flex-direction: row !important;
-        gap: 2em !important;
+        //gap: 2em !important;
         justify-content: center !important;
     }
 
@@ -64,9 +70,9 @@ h2 {
         flex-basis: 100%;
     }
 
-    .dashboard .charts .row {
+    .dashboard .row.charts__grid {
         flex-direction: row !important;
-        gap: 2em !important;
+        column-gap: 2em !important;
     }
 
     .dashboard .cards {

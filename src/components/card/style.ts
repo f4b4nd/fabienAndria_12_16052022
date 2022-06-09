@@ -13,7 +13,7 @@ interface TextProps {
 
 export const Container = styled.div`
     height: 140px;
-    max-width: 350px;
+    max-width: 300px;
     min-width: 300px;
     display: flex;
     justify-content: space-evenly;
@@ -25,15 +25,16 @@ export const Group = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 1em;
+    padding-left: 2em;
     flex: 1;
     gap: 1.5em;
 
-    @media screen and (min-width: 700px) and (max-width: 1450px) {
+    @media screen and (min-width: 700px) and (max-width: 1500px) {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         min-width: 200px;
+        padding-left: 0;
     }
 `
 
