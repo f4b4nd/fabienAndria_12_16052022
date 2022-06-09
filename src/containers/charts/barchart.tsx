@@ -14,7 +14,7 @@ export interface BarChartData {
 }
 
 BarChartContainer.propTypes = {
-    data: PropTypes.array.isRequired
+    data: PropTypes.array
 }
 
 export default function BarChartContainer({data}: {data: BarChartData[]}) {

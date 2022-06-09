@@ -8,7 +8,7 @@ import { BarChartData } from '../../containers/charts/barchart'
 import { COLORS } from "../../constants"
 
 BarChartComponent.propTypes = {
-    barChartData: PropTypes.array.isRequired,
+    barChartData: PropTypes.array,
     customTooltip: PropTypes.elementType.isRequired,
     children: PropTypes.node
 }

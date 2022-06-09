@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
 import useFetch from "../../hooks/useFetch"
 
+import isEmpty from "../../utils/isEmpty"
+
 import { getEndpoint } from "../../helpers/endpoints"
 
 import RadarChartContainer from "./radarchart"
@@ -13,6 +15,7 @@ export interface ObjectProps {
     [key: string]: any,
 }
 
+
 export default function ChartsContainer () {
 
     const { id } = useParams()
@@ -22,6 +25,10 @@ export default function ChartsContainer () {
     const performanceData  = useFetch(getEndpoint({route: 'performance', userID}))
     const activityData  = useFetch(getEndpoint({route: 'activity', userID}))
     const sessionsData  = useFetch(getEndpoint({route: 'sessions', userID}))
+
+    if (isEmpty(defaultData) || isEmpty(performanceData) || isEmpty(activityData) || isEmpty(sessionsData)) {
+        return <></>
+    }
 
     return (
         <div className="dashboard">
