@@ -1,9 +1,21 @@
 import { ReactNode } from "react"
+import PropTypes from "prop-types"
+
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
 
 import { Container, Title, Text} from "./style"
 
-export default function PieChartComponent ({pieChartData, children}: {pieChartData: any[], children: ReactNode}) {
+interface PieChartComponentProps {
+    pieChartData: any[]
+    children: ReactNode
+}
+
+PieChartComponent.propTypes = {
+    pieChartData: PropTypes.array.isRequired,
+    children: PropTypes.node
+}
+
+export default function PieChartComponent ({pieChartData, children}: PieChartComponentProps) {
     return (
         <Container className="pie-chart">
 
@@ -14,7 +26,7 @@ export default function PieChartComponent ({pieChartData, children}: {pieChartDa
                 <PieChart >
 
                     <Pie
-                        data={pieChartData}                        
+                        data={pieChartData}
                         dataKey="value"
                         innerRadius={100}
                         outerRadius={120}

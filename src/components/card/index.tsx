@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import { ReactNode } from "react"
 import { ObjectProps as RestProps} from "../../containers/charts"
 
@@ -14,6 +16,10 @@ interface IconContainerProps extends RestProps {
 
 interface TextProps extends RestProps {
     children: ReactNode,
+}
+
+Card.propTypes = {
+    children: PropTypes.node
 }
 
 export default function Card ({children, ...restProps} : ContainerProps) {

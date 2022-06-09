@@ -1,8 +1,12 @@
+import PropTypes from "prop-types"
+
 import PieChart from '../../components/piechart'
 
 import { COLORS } from '../../constants'
 
-
+PieChartContainer.propTypes = {
+    score: PropTypes.number
+}
 
 export default function PieChartContainer({score}: {score: number}) {
 

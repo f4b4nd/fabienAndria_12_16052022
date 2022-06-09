@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import LineChart from "../../components/linechart"
 
 interface SessionData {
@@ -23,6 +25,10 @@ const DaysLabels = {
     7: 'D'
 } as const
 
+LineChartContainer.propTypes = {
+    data: PropTypes.array.isRequired
+}
+
 export default function LineChartContainer({data}: {data: SessionData[]}) {
 
     return (
@@ -43,7 +49,7 @@ function getLineChartData(data: SessionData[]): LineChartData[] {
     }))
 }
 
-function CustomTooltip ({payload}: { payload: {value? : string}[] }) {
+function CustomTooltip ({payload}: { payload: {value? : string}[] }): React.ReactElement {
     return (
         <LineChart.TooltipContainer>
              {payload[0]?.value} min

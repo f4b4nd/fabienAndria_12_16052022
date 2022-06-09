@@ -1,9 +1,13 @@
 import React, { ReactNode } from 'react'
+import PropTypes from "prop-types"
 
 import SportSeeLogo from '../../assets/logos/sportsee.png'
 
 import { Container, Logo, LogoImage, Link, Group } from "./style"
 
+Navbar.propTypes = {
+    children: PropTypes.node
+}
 
 export default function Navbar ({children}: {children: ReactNode}) {
     return <Container> {children} </Container>

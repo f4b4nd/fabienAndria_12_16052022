@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import Card from "../../components/card"
 import { COLORS } from "../../constants"
 import CaloriesIcon from "../../assets/icons/calories-icon.png"
@@ -11,6 +13,10 @@ interface CardData {
     proteinCount: number,
     carbohydrateCount: number,
     lipidCount: number,
+}
+
+CardContainer.propTypes = {
+    data: PropTypes.array.isRequired
 }
 
 export default function CardContainer ({ data } : {data: CardData}) {

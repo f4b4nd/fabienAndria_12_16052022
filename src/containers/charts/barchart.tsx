@@ -1,3 +1,6 @@
+import PropTypes from "prop-types"
+
+
 import BarChart from "../../components/barchart"
 
 import { COLORS } from "../../constants"
@@ -10,6 +13,9 @@ export interface BarChartData {
     value?: string
 }
 
+BarChartContainer.propTypes = {
+    data: PropTypes.array.isRequired
+}
 
 export default function BarChartContainer({data}: {data: BarChartData[]}) {
     return (
@@ -34,7 +40,7 @@ function getBarChartData(data: BarChartData[]): BarChartData[] {
     return barChartData
 }
 
-function CustomTooltip ({payload}: { payload: {value? : string}[] }) {
+function CustomTooltip ({payload}: { payload: {value? : string}[] }): React.ReactElement {
     return (
         <BarChart.TooltipContainer>
             <BarChart.TooltipLine> {payload[0]?.value}Kg </BarChart.TooltipLine>

@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import PropTypes from "prop-types"
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
@@ -6,7 +7,19 @@ import { Container, Title, Legend, LegendText, LegendBullet, LegendGroup, Toolti
 import { BarChartData } from '../../containers/charts/barchart'
 import { COLORS } from "../../constants"
 
-export default function BarChartComponent({barChartData, customTooltip, children}: {barChartData: BarChartData[], customTooltip: any, children: ReactNode}) {
+BarChartComponent.propTypes = {
+    barChartData: PropTypes.array.isRequired,
+    customTooltip: PropTypes.elementType.isRequired,
+    children: PropTypes.node
+}
+
+interface BarChartComponentProps {
+    barChartData: BarChartData[], 
+    customTooltip: React.ReactElement, 
+    children: ReactNode
+}
+
+export default function BarChartComponent({barChartData, customTooltip, children}: BarChartComponentProps) {
     return (
 
         <Container className="bar-chart">

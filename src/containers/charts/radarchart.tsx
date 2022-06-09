@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import RadarComponent from "../../components/radarchart"
 
 import { ObjectProps } from "./"
@@ -24,6 +26,9 @@ const KindsTypes = {
     intensity: { translation: 'Intensité', sortByIndex: 0},
 } as const
 
+RadarChartContainer.propTypes = {
+    performanceData: PropTypes.object
+}
 
 export default function RadarChartContainer({performanceData}: ObjectProps) {
 

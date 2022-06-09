@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts"
 
 import { COLORS } from '../../constants'
@@ -6,6 +8,10 @@ import { Container } from './style'
 
 import { RadarChartData } from '../../containers/charts/radarchart'
 
+
+RadarComponent.propTypes = {
+    data: PropTypes.array.isRequired
+}
 
 export default function RadarComponent ({data}: {data: RadarChartData[]}) {
 

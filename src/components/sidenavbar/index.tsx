@@ -1,7 +1,12 @@
+import PropTypes from "prop-types"
+
 import { ReactNode } from "react" 
 
 import { Container, ImageContainer, Image, Column, Link, Text } from "./style"
 
+SideNavbar.propTypes = {
+    children: PropTypes.node
+}
 
 export default function SideNavbar ({children} : {children: ReactNode}) {
     return <Container> {children} </Container>

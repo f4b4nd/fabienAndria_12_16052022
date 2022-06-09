@@ -1,11 +1,26 @@
 import { ReactNode } from "react"
+import PropTypes from "prop-types"
+
 import { LineChart, Line, Tooltip, XAxis, YAxis, ResponsiveContainer} from "recharts"
 
 import { LineChartData } from "../../containers/charts/linechart"
 
 import { Container, Text, TooltipContainer } from "./style"
 
-export default function LineChartComponent ({lineChartData, customTooltip, children}: {lineChartData: LineChartData[], customTooltip: any, children: ReactNode}) {
+
+interface LineChartComponentProps {
+    lineChartData: LineChartData[], 
+    customTooltip: React.ReactElement, 
+    children: ReactNode
+}
+
+LineChartComponent.propTypes = {
+    lineChartData: PropTypes.array.isRequired,
+    customTooltip: PropTypes.element.isRequired,
+    children: PropTypes.node
+}
+
+export default function LineChartComponent ({lineChartData, customTooltip, children}: LineChartComponentProps) {
 
     return (
 
