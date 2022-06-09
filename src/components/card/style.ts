@@ -13,7 +13,8 @@ interface TextProps {
 
 export const Container = styled.div`
     height: 140px;
-    width: 250px;
+    max-width: 350px;
+    min-width: 200px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -25,6 +26,14 @@ export const Group = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
+    gap: 1.5em;
+
+    @media screen and (min-width: 700px) and (max-width: 1300px) {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        min-width: 200px;
+    }
 `
 
 export const Icon = styled.img`

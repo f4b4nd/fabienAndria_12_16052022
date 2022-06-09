@@ -3,12 +3,12 @@ import { Link as RouterLink } from "react-router-dom"
 
 export const Container = styled.aside`
     background-color: black;
-    width: 100px;
-    min-height: 100vh;
+    min-width: 80px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    padding: 50px 0;
+    row-gap: 100px;
 `
 
 export const ImageContainer = styled.div`
@@ -26,6 +26,7 @@ export const Column = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 2em;
+    justify-content: flex-start;
 `
 
 export const Link = styled(RouterLink)``

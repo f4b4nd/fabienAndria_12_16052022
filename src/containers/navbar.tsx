@@ -6,13 +6,17 @@ export default function NavbarContainer () {
 
             <Navbar.Logo to="#" />
             
-            <Navbar.Link to="#"> Accueil </Navbar.Link>
+            <Navbar.Group>
 
-            <Navbar.Link to="#"> Profil </Navbar.Link>
+                <Navbar.Link to="#"> Accueil </Navbar.Link>
 
-            <Navbar.Link to="#"> Réglages </Navbar.Link>
+                <Navbar.Link to="#"> Profil </Navbar.Link>
 
-            <Navbar.Link to="#"> Communauté </Navbar.Link>
+                <Navbar.Link to="#"> Réglages </Navbar.Link>
+
+                <Navbar.Link to="#"> Communauté </Navbar.Link>
+
+            </Navbar.Group>
 
         </Navbar>
     )

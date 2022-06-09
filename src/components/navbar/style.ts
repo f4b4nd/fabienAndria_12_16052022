@@ -6,14 +6,13 @@ export const Container = styled.nav`
     background-color: black;
     height: 100px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 1em;
 `
 
 export const Logo = styled(RouterLink)`
     width: 170px;
-    height: 55px;
+    height: 60px;
     overflow: hidden;
 `
 
@@ -26,4 +25,10 @@ export const Link = styled(RouterLink)`
     color: white;
     font-size: 1.3em;
     text-decoration: none;
+`
+
+export const Group = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
 `

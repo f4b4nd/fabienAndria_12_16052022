@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 
 import SportSeeLogo from '../../assets/logos/sportsee.png'
 
-import { Container, Logo, LogoImage, Link } from "./style"
+import { Container, Logo, LogoImage, Link, Group } from "./style"
 
 
 export default function Navbar ({children}: {children: ReactNode}) {
@@ -20,3 +20,8 @@ Navbar.Logo = function ({to}: {to : string}) {
 Navbar.Link = function ({children, ...restProps} : {to: any, children : ReactNode}) {
     return <Link {...restProps}> {children} </Link>
 }
+
+Navbar.Group = function ({children, ...restProps} : {children : ReactNode}) {
+    return <Group {...restProps}> {children} </Group>
+}
+

@@ -8,6 +8,7 @@ interface LegendBulletProps {
 
 export const Container = styled.div`
     height: 400px;
+    max-width: 80vw;
     flex: 1;
     position: relative;
     background-color: ${COLORS.lightGrey};

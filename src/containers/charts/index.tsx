@@ -36,7 +36,7 @@ export default function ChartsContainer () {
 
             <div className="row">
             
-                <div className="col charts">
+                <div className="charts">
 
                     <div className="row">
 
@@ -56,7 +56,7 @@ export default function ChartsContainer () {
 
                 </div>
 
-                <div className="col cards">
+                <div className="cards">
 
                     <CardContainer data={defaultData.keyData}/>
 
