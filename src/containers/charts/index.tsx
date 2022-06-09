@@ -51,7 +51,7 @@ export default function ChartsContainer () {
 
                     </div>
 
-                    <div className="row">
+                    <div className="row charts__grid">
 
                         <LineChartContainer data={sessionsData.sessions} />
 

@@ -4,7 +4,7 @@ main {
 
 .dashboard {
     margin-bottom: 2em;
-    padding: 0 100px;
+    padding: 0 50px;
     flex: 1;
 }
 
@@ -12,11 +12,11 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 3em;
+    row-gap: 3em;
 }
 
 .dashboard .charts {
-    flex-basis: 60%;
+    flex-basis: 70%;
     display: flex;
     flex-direction: column;
     row-gap: 2em;
@@ -24,6 +24,8 @@ main {
 
 .dashboard .cards {
     flex: 1;
+    justify-self: flex-end;
+
 }
 
 .dashboard .title {
