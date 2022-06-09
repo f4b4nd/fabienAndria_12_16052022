@@ -2,8 +2,8 @@ import styled from "styled-components"
 import { COLORS } from "../../constants"
 
 export const Container = styled.div`
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     background-color: ${COLORS.lightGrey};
     border-radius: 5px;
     position: relative;

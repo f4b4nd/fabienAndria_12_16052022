@@ -2,8 +2,8 @@ import styled from "styled-components"
 import { COLORS } from "../../constants"
 
 export const Container = styled.div`
-    height: 300px;
-    width: 300px;
+    height: 280px;
+    width: 280px;
     background-color: ${COLORS.fluoRed};
     position: relative;
     border-radius: 5px;
