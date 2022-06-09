@@ -57,7 +57,6 @@ h2 {
 @media screen and (min-width: 700px) and (max-width: 1300px) {
     .row {
         flex-direction: row !important;
-        //gap: 2em !important;
         justify-content: center !important;
     }
 

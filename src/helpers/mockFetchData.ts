@@ -6,6 +6,10 @@ interface MockFetchProps extends FetchProps {
     setResponseData: React.Dispatch<any>
 }
 
+/**
+ * Returns array of data according to route
+ * @param {{route: String, endpoint: String, setResponseDate: callback}}
+ */
 export default function mockFetchData ({route, endpoint, setResponseData} : MockFetchProps) {
 
     const userID = getUserIdFromEndpoint(endpoint)
@@ -37,6 +41,10 @@ export default function mockFetchData ({route, endpoint, setResponseData} : Mock
 
 }
 
+/**
+ * Find an integer with regex as userID
+ * @param { String } endpoint
+ */
 function getUserIdFromEndpoint (endpoint : string) {
     const match = endpoint.match(/\d+/g)
     return match ? match[0] : ""

@@ -42,6 +42,10 @@ export default function LineChartContainer({data}: {data: SessionData[]}) {
 
 }
 
+/**
+ * Add the label of a day has a string
+ * @param { Array } data 
+ */
 function getLineChartData(data: SessionData[]): LineChartData[] {
     return data?.map(item => ({
         ...item,

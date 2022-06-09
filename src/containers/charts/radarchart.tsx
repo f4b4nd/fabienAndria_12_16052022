@@ -42,7 +42,11 @@ export default function RadarChartContainer({performanceData}: ObjectProps) {
 
 }
 
-
+/**
+ * Associates every kind with its label
+ * Sorts the data by type of kind 
+ * @param { Array } performanceData 
+ */
 function getRadarChartData (performanceData: PerformanceData): RadarChartData[] {
 
     const radarChartData: RadarChartData[] = performanceData.data?.reduce((acc, item) => {

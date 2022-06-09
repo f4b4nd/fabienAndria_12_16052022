@@ -22,6 +22,10 @@ export default function useFetch({route, endpoint}: FetchProps) {
 
     const [responseData, setResponseData] = useState<ResponseData>({})
 
+    /**
+     * Fetch data with fetch browser API
+     * @param {{apiURL: String, endpoint: String }}
+    */
     function fetchData({apiURL, endpoint}: FetchData) {
 
         fetch(apiURL + endpoint)

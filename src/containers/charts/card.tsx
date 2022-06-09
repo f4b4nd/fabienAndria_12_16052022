@@ -21,6 +21,10 @@ CardContainer.propTypes = {
 
 export default function CardContainer ({ data } : {data: CardData}) {
     
+    /**
+     * Converts calorie to kcal with French format
+     * @param { Number } calorie 
+    */
     const calorieFormatter = (calorie: number): string => {
         if (!calorie) {
             return ""

@@ -32,6 +32,10 @@ export default function BarChartContainer({data}: {data: BarChartData[]}) {
     )
 }
 
+/**
+ * Add the label of a day has a string
+ * @param { Array } data 
+ */
 function getBarChartData(data: BarChartData[]): BarChartData[] {
     const barChartData = data?.map((item, idx) => ({
         ...item,
@@ -40,6 +44,10 @@ function getBarChartData(data: BarChartData[]): BarChartData[] {
     return barChartData
 }
 
+/**
+ * To add custom style to tooltip
+ * @param { Array } payload 
+ */
 function CustomTooltip ({payload}: { payload: {value? : string}[] }): React.ReactElement {
     return (
         <BarChart.TooltipContainer>
